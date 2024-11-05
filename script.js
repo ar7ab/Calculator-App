@@ -24,9 +24,12 @@ function inputDecimal() {
 }
 
 function toggleSign() {
-    screenValue = (parseFloat(screenValue) * -1).toString();
     if (waitForSecondValue) {
-        firstValue = screenValue;
+        // If waiting for the second operand, toggle sign on screenValue
+        screenValue = (parseFloat(screenValue) * -1).toString();
+    } else {
+        // Toggle sign for current screenValue
+        screenValue = (parseFloat(screenValue) * -1).toString();
     }
     updateScreenDisplay();
 }
@@ -34,7 +37,7 @@ function toggleSign() {
 function getSquareRoot() {
     let numberValue = parseFloat(screenValue);
     if (isNaN(numberValue)) {
-        screenValue = "Error"; // Handle non-numeric input gracefully
+        screenValue = "Error";
     } else {
         screenValue = Math.sqrt(numberValue).toString();
     }
