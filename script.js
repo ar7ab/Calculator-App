@@ -25,10 +25,8 @@ function inputDecimal() {
 
 function toggleSign() {
     if (waitForSecondValue) {
-        // If waiting for the second operand, toggle sign on screenValue
         screenValue = (parseFloat(screenValue) * -1).toString();
     } else {
-        // Toggle sign for current screenValue
         screenValue = (parseFloat(screenValue) * -1).toString();
     }
     updateScreenDisplay();
